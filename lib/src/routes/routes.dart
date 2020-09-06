@@ -6,16 +6,6 @@ import 'package:control_de_pacientes/src/pages/ingreso.dart';
 import 'package:control_de_pacientes/src/pages/home_logueado.dart';
 import 'package:control_de_pacientes/src/pages/paciente.dart';
 
-/* Map<String, WidgetBuilder> getApplicationRoutes() {
-  return <String, WidgetBuilder>{
-    'home': (BuildContext context) => HomePage(),
-    'ingreso': (BuildContext context) => IngresoPage(),
-    'registro': (BuildContext context) => RegistroPage(),
-    'home_logueado': (BuildContext context) => HomeLogueadoPage(),
-    'paciente': (BuildContext context) => PacientePage(),
-  };
-} */
-
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;

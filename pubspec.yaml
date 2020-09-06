@@ -32,11 +32,19 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
+  flutter_launcher_icons:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
   http:
   shared_preferences:
+
+# Icono de la app
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/movie-icon.png"
 
 # The following section is specific to Flutter.
 flutter:

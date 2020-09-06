@@ -13,8 +13,8 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
   ScrollController _scrollController = new ScrollController();
   final usuarioProvider = new UsuarioProvider();
 
-  List<int> _listaNumeros = new List();
-  int _ultimoNumero = 0;
+  List<dynamic> currentData;
+
   bool _isLoading = false;
 
   @override
@@ -44,7 +44,7 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Listas'),
+        title: Text('Pacientes'),
         actions: [
           FlatButton(
             child: Column(
@@ -69,11 +69,16 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
           _crearLoading(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+      /* floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: Colors.greenAccent,
-        onPressed: () {},
-      ),
+        onPressed: () {
+          dataProvider.guardarData('Hola', 'Como estas');
+          setState(() {
+            dataProvider.cargarData();
+          });
+        },
+      ), */
     );
   }
 
@@ -131,10 +136,7 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
   }
 
   void _agregar5() {
-    for (var i = 0; i < 5; i++) {
-      _ultimoNumero++;
-      _listaNumeros.add(_ultimoNumero);
-    }
+    for (var i = 0; i < 5; i++) {}
 
     setState(() {});
   }

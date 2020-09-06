@@ -37,44 +37,37 @@ class _RegistroPageState extends State<RegistroPage> {
     final size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-            width: size.width * 0.85,
-            padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 20.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5.0),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 3.0,
-                    offset: Offset(0.0, 10.0),
-                    spreadRadius: 3.0,
-                  )
-                ]),
-            child: Column(
-              children: [
-                Text(
-                  'Registrate',
-                  style: TextStyle(fontSize: 20.0),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                _inputNombre(),
-                Divider(),
-                _inputEmail(),
-                Divider(),
-                _inputPassword(),
-                Divider(),
-                _inputRepeatPassword(),
-                Divider(),
-                _crearBoton(),
-              ],
-            ),
+      child: Container(
+        width: size.width * 0.95,
+        child: Card(
+          margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          elevation: 5.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20.0,
+              ),
+              Text(
+                'Registrate',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              _inputNombre(),
+              Divider(),
+              _inputEmail(),
+              Divider(),
+              _inputPassword(),
+              Divider(),
+              _inputRepeatPassword(),
+              Divider(),
+              _crearBoton(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
