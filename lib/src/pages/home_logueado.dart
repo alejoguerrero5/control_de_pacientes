@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 import 'package:control_de_pacientes/src/providers/data_provider.dart';
 import 'package:control_de_pacientes/src/providers/usuario_provider.dart';
@@ -15,21 +14,16 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
 
   List<dynamic> currentData;
 
-  bool _isLoading = false;
+  //bool _isLoading = false;
 
   @override
   void initState() {
     super.initState();
 
-    _agregar5();
-
     _scrollController.addListener(() {
       //Ver si esta abajo del todo segun pixeles
       if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
-        //_agregar10();
-        fetchData();
-      }
+          _scrollController.position.maxScrollExtent) {}
     });
   }
 
@@ -66,19 +60,8 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
       body: Stack(
         children: <Widget>[
           _crearLista(),
-          _crearLoading(),
         ],
       ),
-      /* floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.greenAccent,
-        onPressed: () {
-          dataProvider.guardarData('Hola', 'Como estas');
-          setState(() {
-            dataProvider.cargarData();
-          });
-        },
-      ), */
     );
   }
 
@@ -135,31 +118,7 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
     return pacientes;
   }
 
-  void _agregar5() {
-    for (var i = 0; i < 5; i++) {}
-
-    setState(() {});
-  }
-
-  Future<Null> fetchData() async {
-    _isLoading = true;
-    setState(() {});
-
-    final duration = new Duration(seconds: 2);
-    new Timer(duration, respuestaHttp);
-  }
-
-  void respuestaHttp() {
-    _isLoading = false;
-
-    // Bajar un poco el scroll
-    _scrollController.animateTo(_scrollController.position.pixels + 200,
-        curve: Curves.fastOutSlowIn, duration: Duration(milliseconds: 250));
-
-    _agregar5();
-  }
-
-  Widget _crearLoading() {
+/*   Widget _crearLoading() {
     if (_isLoading) {
       return Column(
         mainAxisSize: MainAxisSize.max,
@@ -176,5 +135,5 @@ class _HomeLogueadoPageState extends State<HomeLogueadoPage> {
     } else {
       return Container();
     }
-  }
+  } */
 }
